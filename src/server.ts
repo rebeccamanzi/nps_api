@@ -1,4 +1,3 @@
-import 'reflect-metadata';
 import express, { request } from 'express';
 import "./database";
 import { router } from './routes';

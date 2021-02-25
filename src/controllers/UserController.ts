@@ -1,13 +1,13 @@
 import { Request, Response } from 'express';
-import { getRepository } from 'typeorm';
-import { User } from '../models/User';
+import { getCustomRepository } from 'typeorm';
+import { UsersRepository } from '../repositories/UserRepository';
 
 class UserController {
   async create (request: Request, response: Response) {
     const { name, email } = request.body;
     
     // Repositório -> permite ações no banco de dados
-    const userRepository = getRepository(User);
+    const userRepository = getCustomRepository(UsersRepository);
 
     // Verificar se já existe um usuário cadastrado com este e-mail
     // Como se fosse uma query: SELECT * FROM USERS WHERE EMAIL = "EMAIL"
@@ -34,4 +34,4 @@ class UserController {
   }
 }
 
-export { UserController }
+export { UserController };

@@ -5,10 +5,13 @@ import { v4 as uuid } from "uuid";
 class User {
   @PrimaryColumn()
   readonly id: string; // é um uui, mas para o typescript é uma string
+  
   @Column()
   name: string;
+  
   @Column()
   email: string;
+  
   @CreateDateColumn()
   created_at: Date
 

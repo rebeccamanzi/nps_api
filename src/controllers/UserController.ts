@@ -1,11 +1,25 @@
 import { Request, Response } from 'express';
 import { getCustomRepository } from 'typeorm';
 import { UsersRepository } from '../repositories/UserRepository';
+import * as yup from 'yup';
 
 class UserController {
   async create (request: Request, response: Response) {
     const { name, email } = request.body;
-    
+
+    // validacao dos campos (name, email) com o yup
+    const schema = yup.object().shape({
+      name: yup.string().required("Nome é obrigatório"),
+      email: yup.string().email().required("E-mail incorreto")
+    })
+
+    // caso não seja válido algum(s) campo(s)
+    try {
+      await schema.validate(request.body, {abortEarly: false});
+    } catch (err) {
+      return response.status(400).json({ error: err });
+    }
+        
     // Repositório -> permite ações no banco de dados
     const userRepository = getCustomRepository(UsersRepository);
 

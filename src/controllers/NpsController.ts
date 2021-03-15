@@ -29,7 +29,8 @@ class NpsController {
     // total de respostas
     const totalAnswers = surveysUsers.length;
 
-    const calculate = (promoters - detractor) / (totalAnswers) * 100;
+    // calcular nps
+    const calculate = Number(((promoters - detractor) / (totalAnswers) * 100).toFixed(2));
 
     return response.json({
       detractor,
@@ -37,7 +38,7 @@ class NpsController {
       passive,
       totalAnswers,
       nps: calculate
-    })
+    });
   }
 }
 

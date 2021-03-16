@@ -26,7 +26,11 @@ yarn dev
 yarn test
 ```
 
+## Layout of the email that is generated
+
+![image](https://user-images.githubusercontent.com/54328096/111299761-15aa4f80-862f-11eb-807b-9cc95067a964.png)
+
 ---
-<h4  align="center">
-Made with 💙 by <a  href="[https://www.linkedin.com/in/rebeccamanzi/](https://www.linkedin.com/in/rebeccamanzi/)"  target="_blank">Rebecca Manzi</a>
+<h4>
+Made with 💜 by <a  href="[https://www.linkedin.com/in/rebeccamanzi/](https://www.linkedin.com/in/rebeccamanzi/)"  target="_blank">Rebecca Manzi</a>
 </h4>

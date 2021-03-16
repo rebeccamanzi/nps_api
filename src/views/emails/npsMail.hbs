@@ -1,4 +1,8 @@
 <style>
+  h3 {
+    color: #9580FF;
+  }
+
   .container {
     width: 800px;
     justify-content: center;
@@ -11,7 +15,7 @@
   .value {
     margin: 5px;
     padding: 10px;
-    background: #8257e6;
+    background: #9580FF;
     color: white;
     border-radius: 6px;
     width: 15px;
@@ -26,6 +30,10 @@
     width: 350px;
   }
 
+  .level span {
+    color: #2A2C37;
+  }
+
   .answers {
     width: 350px;
     display: flex;
@@ -34,15 +42,17 @@
 </style>
 
 <div class="container">
-  <label>Olá <strong>{{name}}</strong>! Tudo bem?</label>
+  <label>Hello <strong>{{name}}</strong>! 😊</label>
 
   <h3>{{title}}</h3>
   <br />
   <strong>{{description}}</strong>
 
+  <br />
+
   <div class="level">
-    <span>Pouco provável</span>
-    <span>Muito provável</span>
+    <span>Unlikely</span>
+    <span>Very likely</span>
   </div>
 
   <div class="answers">

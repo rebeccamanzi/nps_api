@@ -1,3 +1,4 @@
+import 'reflect-metadata'
 import express, { NextFunction, Request, Response } from 'express';
 import "express-async-errors";
 import  createConnection from './database';
@@ -7,8 +8,7 @@ import { router } from './routes';
 createConnection();
 const app = express();
 
-// use -> middleware (o que está entre req/resp)
-app.use(express.json()); // permite trabalhar com json (ex: receber no body)
+app.use(express.json()); 
 app.use(router);
 
 app.use((err: Error, request: Request, response: Response, _next: NextFunction) => {
